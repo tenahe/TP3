@@ -1,20 +1,20 @@
-def nb_moyenne(t):
-    a=0
-    b=0
-    c=0
-    d=0
-    for i in range(len(t)):
-        a+=t[i]
+def moy_sup_inf(liste):
+    somme = 0
+    moy = 0
+    sup = 0
+    inf = 0
+    for i in range(len(liste)):
+        somme += liste[i]
     #rajout de if pour liste vide
-    if len(t)==0:       
+    if len(liste) == 0:       
         return 0,0,0
     else:
-        b=(a/len(t))
+        moyenne = (somme/len(liste))
         #conversion du int en float pour bien déterminer inf st sup
-        for i in range(len(t)):
-            if t[i]>b:
-                c+=1
-        for i in range(len(t)):
-            if t[i]<b:
-                d+=1
-        return b, c, d
+        for i in range(len(liste)):
+            if liste[i] > moyenne:
+                sup += 1
+        for i in range(len(liste)):
+            if liste[i] < moyenne:
+                inf += 1
+        return moyenne, sup, inf
